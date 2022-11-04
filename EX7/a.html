@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7a</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).keydown(function (event) {
+                var car = $('#car')
+                var arrow = { left: 37, up: 38, right: 39, down: 40 };
+                switch (event.which) {
+                    case arrow.right: car.css('transform', 'rotate(360deg)');
+                        car.animate({ left: '+=5px' }, 1);
+                        break;
+                    case arrow.down: car.css('transform', 'rotate(90deg)');
+                        car.animate({ top: '+=5px' }, 1);
+                        break;
+                    case arrow.up: car.css('transform', 'rotate(270deg)');
+                        car.animate({ top: '-=5px' }, 1);
+                        break;
+                    case arrow.left: car.css('transform', 'rotateY(180deg)');
+                        car.animate({ left: '-=5px' }, 1);
+                        break;
+                }
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="car" style="position:absolute;z-index:3;left:5px; top:20px;width:80px;height:50px;">
+        <img src="img.png" alt="" width="80" height="50">
+    </div>
+    <br>
+    <div class="r1"></div>
+    <div class="r2"></div>
+</body>
